@@ -57,8 +57,8 @@
 							<h2 class="tytul">'.$wiersz["tytul"].'</h2>
 							<p>'.$wiersz["tresc"].'</p>
 							<div class="opcje">	
-								<a href="przenies.php?id='.$wiersz["idZadania"].'&etap='.$wiersz["etapZadania"].'">Przenieś</a>
-								<a href="usun.php?id='.$wiersz["idZadania"].'">Usuń</a>
+								<a href="czystyPHP/przenies.php?id='.$wiersz["idZadania"].'&etap='.$wiersz["etapZadania"].'">Przenieś</a>
+								<a href="czystyPHP/usun.php?id='.$wiersz["idZadania"].'">Usuń</a>
 							</div>
 						</div>';
 					}
@@ -71,7 +71,7 @@
 	</header>
 	<div id="glowna">
 		<section id="menu" class="wGlownym">
-			<form id="dodaj" action="nowy.php" method="post">
+			<form id="dodaj" action="czystyPHP/nowy.php" method="post">
 				<h3>Dodaj Zadanie</h3>
 				<input type="text" name="tytul" max=50 min=1 placeholder="Tytuł">
 				<input type="text" name="tresc" placeholder="Treść">
@@ -157,17 +157,22 @@
     		    document.querySelectorAll(".elem").forEach(a=>a.style.display = "block");
 		    } else {
 		    	document.querySelectorAll(".elem").forEach(a=>a.style.display = "none");
-
 		    	let elem = document.getElementsByClassName("elem");
+
 		    	for (var i = 0; i < elem.length; i++) {
 		    		let tytul = document.getElementsByClassName("tytul")[i].innerHTML;
-		    		console.log(tytul.value,elem,str);
-		    		for (var j = 0; j < tytul.length-str.length; j++) {
-		    			let t = String(tytul).substring(str.length, j);
+		    		let slowaTytulu = tytul.split(' ');
+
+		    		for (var j = 0; j < slowaTytulu.length; j++) {
+		    			let t = String(slowaTytulu[j]).substring(str.length, 0);
+
+		    			console.log(t.toLowerCase(), String(str).toLowerCase());
 		    			if (t.toLowerCase() == String(str).toLowerCase()) {
 		    				elem[i].style.display = "block";
 		    			}
+		    			
 		    		}
+		    		
 		    	}
 		    }   
 	    }

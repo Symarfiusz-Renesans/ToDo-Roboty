@@ -9,8 +9,8 @@
 	$wezElement = 'UPDATE listazadan SET etapZadania = '.$liczba.' WHERE idZadania ='.$_GET['id'];
 
 	if ($polaczenie->query($wezElement) === TRUE) {
-		header('Location: index.php?przesunieto=true');
+		header('Location: ../index.php?przesunieto=true');
 	}else{
-		header('Location: index.php?przesunieto=false');
+		header('Location: ../index.php?przesunieto=false');
 	}
 ?>

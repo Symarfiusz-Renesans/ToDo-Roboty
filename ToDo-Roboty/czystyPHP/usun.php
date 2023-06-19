@@ -9,8 +9,8 @@
 	$UsunZadanie = 'DELETE FROM `listazadan` WHERE idZadania = '.$_GET['id'];
 
 	if ($polaczenie->query($UsunZadanie) === TRUE) {
-		header('Location: index.php?usunieto=true');
+		header('Location: ../index.php?usunieto=true');
 	}else{
-		header('Location: index.php?usunieto=false');
+		header('Location: ../index.php?usunieto=false');
 	}
 ?>

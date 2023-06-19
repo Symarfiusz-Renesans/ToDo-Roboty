@@ -32,8 +32,8 @@
 
 	$dodajZadanie = 'INSERT INTO `listazadan` (tytul, tresc, dataPowst, poziomWazno, etapZadania) VALUES ("'.$tytul.'", "'.$tresc.'", "'.date('Y-m-d').'", '.$waznosc.', 1)';
 	if ($polaczenie->query($dodajZadanie) === TRUE) {
-		header("Location: index.php?sukces=true");
+		header("Location: ../index.php?sukces=true");
 	} else {
-		header("Location: index.php?sukces=false");
+		header("Location: ../index.php?sukces=false");
 	}
 ?>
