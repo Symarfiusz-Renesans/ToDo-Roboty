@@ -1,6 +1,10 @@
 *{
 	font-family: Verdana;
-	margin: 0 !important;
+}
+
+body{
+	height: 100%;
+	margin: 0;
 }
 
 header{
@@ -33,48 +37,49 @@ header{
 #etapy{
 	display: flex;
 	justify-content: space-around;
+	height: 90%;
 }
 .etap{
 	background-color: purple;
 	color: white;
 	padding: 5px 0;
-	border-radius: 5px 5px 0 0;
+	border-radius: 20px 20px 0 0;
 }
 .elementy{
 	background-color: mediumpurple;
 	padding-bottom: 10px;
 	border-radius: 0 0 5px 5px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 .elem{
-	border-bottom: white 1px solid;
-	display:block;
-	border-radius: 10px;
+	position:relative;
+	background: var(--kolor);
+	width: 90%;
+	height: auto;
+	margin-top: 10px;
+	border-radius: 30px 10px 10px 10px;
+	overflow: hidden;
+
 }
-.racz{
-	background-color: limegreen;
-}
-.spac{
-	background-color: yellow;
-}
-.truc{
-	background-color: orange;
-}
-.spri{
-	background-color: red;
-}
-.doda{
-	background-color: pink;
+.pudelko{
+	position: absolute;
+	inset: 20px;
+	background: mediumpurple;
 }
 .etapZadania{
-	height: 97vh;
-	width: 22.5%;
+	height: 100%;
+	width: 30%;
 	text-align: center;
+	margin: 5px;
 }
 #szukaj{
-	width: 100%;
-	height: 2vh;
+	width: 90%;
+	height: 4%;
 	border: #DDD5E6 solid 5px;
-	border-radius: 5px	;
+	border-radius: 5px;
+	margin:5px 0;
 }
 .opcje{
 	display: flex;
@@ -94,4 +99,14 @@ a{
 	text-decoration: none;
 	color: black;
 	font-weight: bold;
+}
+
+.doSzukania	{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+.zawartosc{
+	display: flex;
+	flex-direction: column;
 }
